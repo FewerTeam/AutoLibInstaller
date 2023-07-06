@@ -15,25 +15,20 @@ class ALI(object):
         
     def auto(self):
         """return the imported lib"""
-        if self.check_installed():
-            return self.import()
-        else:
+        if not(self.check_installed()):
             self.install()
-            return self.import
+        return self.import()
         
     def check_installed(self):
         """check if the lib is installed"""
         try:
             self.import()
-            return True
         except ModuleNotFoundError:
-            self.install()
-            try:
-                self.import()
-                return False
-            except:
-                raise RuntimeError("something when wrong")
-        
+            return False
+        else:
+            return True
+    
+    
     def import(self):
         """import the lib"""
         with open("a.py, "w") as temp:
