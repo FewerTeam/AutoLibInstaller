@@ -27,6 +27,10 @@ class ALI(object):
             return False
         else:
             return True
+            
+    def changeto(self, new:str):
+        """Change the lib to the selected value"""
+        self.lib = new
     
     
     def import(self):
