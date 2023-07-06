@@ -31,10 +31,10 @@ class ALI(object):
             temp.write("""TEMP FILE OF ALI
 import {0} as l
 def ret():
-    return l"""
+    return l""".format(self.lib)
         import a
         return a.ret()
         
     def install(self):
         """install the lib"""
-        ...
+        os.system("pip install {0}".format(self.lib))
