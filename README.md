@@ -7,9 +7,13 @@ At the beginning of a project :
 
 
 """Imports"""
+
 from ALI import ALI
+
 firstlib = ALI("time")
+
 time = firstlib.auto()
+
 
 if the lib is already installed, it will be imported. Else, it will be downloaded with pip then imported.
 You can now use for example
