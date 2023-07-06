@@ -23,7 +23,16 @@ class ALI(object):
         
     def check_installed(self):
         """check if the lib is installed"""
-        ...
+        try:
+            self.import()
+            return True
+        except ModuleNotFoundError:
+            self.install()
+            try:
+                self.import()
+                return False
+            except:
+                raise RuntimeError("something when wrong")
         
     def import(self):
         """import the lib"""
